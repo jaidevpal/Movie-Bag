@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView_PopularMovies"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EFEFEF"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView_MoviePoster"
+            android:layout_width="125dp"
+            android:layout_height="190dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:background="@color/shim_imageView"
+            android:layout_margin="15dp"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/homeRecyclerViewRoundedImage"
+            android:theme="@style/Theme.AppCompat"/>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView_MoviePoster"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView_MovieTitle"
+                android:layout_width="180dp"
+                android:layout_height="25dp"
+                android:layout_margin="5dp"
+                android:gravity="top|start"
+                android:paddingRight="5dp"
+                android:fontFamily="@font/advent_pro_bold"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                android:background="@color/shim_textView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView_MovieLanguage"
+                android:layout_width="120dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:gravity="bottom"
+                android:background="@color/shim_textView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textView_MovieTitle"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView_MovieTitle"
+                app:layout_constraintTop_toBottomOf="@+id/textView_MovieTitle"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView_Movie_ReleaseDate"
+                android:layout_width="140dp"
+                android:layout_height="25dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="20dp"
+                android:background="@color/shim_textView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textView_MovieLanguage"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView_MovieLanguage"
+                app:layout_constraintTop_toBottomOf="@+id/textView_MovieLanguage"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/ratingBar_MovieRating"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="@color/shim_textView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_Movie_ReleaseDate"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/ratingInNumber"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="bottom"
+                android:layout_margin="5dp"
+                android:background="@color/shim_textView"
+                app:layout_constraintBottom_toBottomOf="@+id/ratingBar_MovieRating"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/ratingBar_MovieRating"
+                app:layout_constraintTop_toTopOf="@+id/ratingBar_MovieRating" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

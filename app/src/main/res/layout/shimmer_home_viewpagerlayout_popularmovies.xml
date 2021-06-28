@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center|top">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView_MovieBackDrop_ViewPager"
+        android:layout_width="411dp"
+        android:layout_height="270dp"
+        android:adjustViewBounds="true"
+        android:foregroundGravity="center"
+        android:scaleType="centerInside"
+        android:background="@color/shim_imageView"/>
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="270dp"
+        android:gravity="bottom|start"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_movieTitleView_Pager"
+            android:layout_width="230dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/permanent_marker"
+            android:background="@color/shim_textView"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            android:textColor="#FFF3E0" />
+
+        <TextView
+            android:id="@+id/tv_movieReleaseDate_ViewPager"
+            android:layout_width="150dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="casual"
+            android:gravity="end"
+            android:background="@color/shim_textView"
+            android:layout_gravity="end"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

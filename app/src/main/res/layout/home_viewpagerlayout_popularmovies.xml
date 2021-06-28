@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center|top">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView_MovieBackDrop_ViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:foregroundGravity="center"
+        android:scaleType="centerInside"
+        tools:srcCompat="@drawable/backdrop_sample" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
+        <View
+            android:id="@+id/view_OverPagerView"
+            android:layout_width="412dp"
+            android:layout_height="125dp"
+            android:layout_gravity="center|bottom"
+            android:background="@drawable/imageview_shadow_style_layout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|start"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_movieTitleView_Pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/permanent_marker"
+            android:text="Movie Title"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            android:textColor="#FFF3E0" />
+
+        <TextView
+            android:id="@+id/tv_movieReleaseDate_ViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/teko_light"
+            android:gravity="end"
+            android:text="Movie Release Date"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>
