@@ -16,3 +16,6 @@ Datas are fetched from the API link in form of JSON and converted in GSON format
 All the Data models are placed inside Data Model Directory, and API related networking files such as Retrofit client class and interface are placed inside the API directory.
 As Retrofit Client and Interface are the main network class, the contain the API link and Key.
 API_Interface file helps us to reach the API directories as per requirement.
+
+All the Images are shown using Picasso library.
+The dotIndicators below all the image viewers are also integrated using a 3rd Party library of tommybuonomo/dotsindicator (Main Reason behind using this library is due to it's cool animated dot movments).
