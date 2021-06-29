@@ -22,6 +22,7 @@ import com.example.moviebag.api.RetrofitClientAPI;
 import com.example.moviebag.databinding.ActivityMainBinding;
 import com.example.moviebag.databinding.HomeRecyclerviewlayoutPopularmoviesBinding;
 import com.example.moviebag.databinding.HomeViewpagerlayoutPopularmoviesBinding;
+import com.example.moviebag.databinding.ShimmererLayoutForRecyclerviewPopMovBinding;
 import com.squareup.picasso.Picasso;
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
 
@@ -82,6 +83,9 @@ public class MainActivity extends AppCompatActivity implements Custom_ViewOnItem
                 if (v.getChildAt(v.getChildCount() - 1) != null) {
                     if ((scrollY >= (v.getChildAt(v.getChildCount() - 1).getMeasuredHeight() - v.getMeasuredHeight())) &&
                             scrollY > oldScrollY) {
+                        binding.progressBar.setVisibility(View.VISIBLE);
+//                        Toast.makeText(MainActivity.this, "Loading!", Toast.LENGTH_SHORT).show();
+                        
                         //code to fetch more data for endless scrolling
                         callAdditionalData();
                     }
@@ -154,9 +158,6 @@ public class MainActivity extends AppCompatActivity implements Custom_ViewOnItem
     //    This method is called when there is already data available and want to add further through pagination(included).
     private void callAdditionalData() {
 
-        binding.shimmerFrameLayoutRV.setVisibility(View.VISIBLE);
-        binding.shimmerFrameLayoutRV.startShimmer();
-
 //        First we are checking the current page number and then increasing it with 1
         if (page <= totalPage) {
             page++;
@@ -171,8 +172,8 @@ public class MainActivity extends AppCompatActivity implements Custom_ViewOnItem
                     public void onResponse(Call<Movie_Popular> call, Response<Movie_Popular> response) {
 
                         if (response.isSuccessful()) {
-                            binding.shimmerFrameLayoutRV.setVisibility(View.GONE);
-                            binding.shimmerFrameLayoutRV.stopShimmer();
+                            binding.progressBar.setVisibility(View.INVISIBLE);
+//                            Toast.makeText(MainActivity.this, "Loading Done!", Toast.LENGTH_SHORT).show();
                         }
                         totalPage = response.body().getTotalPages();
 
@@ -181,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements Custom_ViewOnItem
 
                         movie_populars.addAll(response.body().getResults());
                         adapter.notifyDataSetChanged();
-                        Toast.makeText(MainActivity.this, "Page No." + page + " loaded!", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(MainActivity.this, "Page No." + page + " loaded!", Toast.LENGTH_SHORT).show();
 
                     }
 
@@ -311,6 +312,8 @@ public class MainActivity extends AppCompatActivity implements Custom_ViewOnItem
     //    This is an Adapter for recyclerView to Bind views with data
     class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
+        private static final int VIEW_TYPE_ITEM = 11;
+        private static final int VIEW_TYPE_LOADING = 12;
         private List<Movie_Popular.Result> moviePop;
         private Context context;
         private Custom_ViewOnItemClickListener custom_viewOnItemClickListener;
@@ -323,12 +326,24 @@ public class MainActivity extends AppCompatActivity implements Custom_ViewOnItem
 
         }
 
+        //        To check while loading new item inside RecyclerView
+        @Override
+        public int getItemViewType(int position) {
+
+            if (moviePop.get(position) != null) {
+                return VIEW_TYPE_ITEM;
+            } else {
+                return VIEW_TYPE_LOADING;
+            }
+        }
+
         @NonNull
         @org.jetbrains.annotations.NotNull
         @Override
         public MyViewHolder onCreateViewHolder(@NonNull @org.jetbrains.annotations.NotNull ViewGroup parent, int viewType) {
 //            Creating Views inside RecyclerView
             LayoutInflater layoutInflater = LayoutInflater.from(context);
+
             HomeRecyclerviewlayoutPopularmoviesBinding binding = HomeRecyclerviewlayoutPopularmoviesBinding.inflate(layoutInflater, parent, false);
             return new MyViewHolder(binding);
         }
@@ -363,6 +378,7 @@ public class MainActivity extends AppCompatActivity implements Custom_ViewOnItem
                 this.cardView_binding = cardView_binding;
             }
 
+            //            This method bind all the views and data together received from onBindViewHolder method.
             public void bindViews(String image, String movie_Title, String movie_LanguageCode, String movie_releaseDate, float rating) {
 
                 Picasso.get()
