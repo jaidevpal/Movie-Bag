@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements Custom_ViewOnItem
                 if (v.getChildAt(v.getChildCount() - 1) != null) {
                     if ((scrollY >= (v.getChildAt(v.getChildCount() - 1).getMeasuredHeight() - v.getMeasuredHeight())) &&
                             scrollY > oldScrollY) {
-                        binding.progressBar.setVisibility(View.VISIBLE);
+                        binding.progressShimmer.setVisibility(View.VISIBLE);
 //                        Toast.makeText(MainActivity.this, "Loading!", Toast.LENGTH_SHORT).show();
                         
                         //code to fetch more data for endless scrolling
@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements Custom_ViewOnItem
                     public void onResponse(Call<Movie_Popular> call, Response<Movie_Popular> response) {
 
                         if (response.isSuccessful()) {
-                            binding.progressBar.setVisibility(View.INVISIBLE);
+                            binding.progressShimmer.setVisibility(View.INVISIBLE);
 //                            Toast.makeText(MainActivity.this, "Loading Done!", Toast.LENGTH_SHORT).show();
                         }
                         totalPage = response.body().getTotalPages();
