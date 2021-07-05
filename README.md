@@ -4,7 +4,7 @@ This project is completely based on a public API.
 
 System is design on _MVVM architecture_, which clearly result on smooth performance.
 
-There are mainly four Activity screens:
+There are mainly four Activity screens placed inside UI package:
 1. Main activity(Launcher)
 2. Movie Profile
 3. Movie Reviews
