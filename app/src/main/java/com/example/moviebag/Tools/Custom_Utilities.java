@@ -1,4 +1,4 @@
-package com.example.moviebag;
+package com.example.moviebag.Tools;
 
 import java.text.DateFormat;
 import java.text.ParseException;

@@ -39,5 +39,9 @@
         <item name="android:maxHeight">25dp</item>
     </style>
 
+    <style name="cardV" parent="Widget.MaterialComponents.CardView">
+
+        <item name="backgroundTint">@color/white</item>
+    </style>
 
 </resources>

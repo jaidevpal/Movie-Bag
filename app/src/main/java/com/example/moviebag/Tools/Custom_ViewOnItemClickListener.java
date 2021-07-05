@@ -1,4 +1,4 @@
-package com.example.moviebag;
+package com.example.moviebag.Tools;
 
 public interface Custom_ViewOnItemClickListener {
 

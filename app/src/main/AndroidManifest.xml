@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieBag">
-        <activity android:name=".Movie_casts_detail" />
-        <activity android:name=".Movie_Reviews_Activity" />
-        <activity android:name=".Movie_Profile" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".UI.Movie_casts_detail" />
+        <activity android:name=".UI.Movie_Reviews_Activity" />
+        <activity
+            android:name=".UI.Movie_Profile"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+        <activity android:name=".UI.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

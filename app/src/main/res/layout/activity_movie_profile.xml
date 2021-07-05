@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Movie_Profile">
+    tools:context=".UI.Movie_Profile">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -138,6 +138,7 @@
                     android:gravity="start"
                     android:hint="Language:"
                     android:fontFamily="@font/roboto"
+                    android:layout_marginTop="10dp"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
