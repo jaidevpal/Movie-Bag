@@ -1,39 +1,20 @@
 package com.example.moviebag.UI;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.moviebag.Adapters.MovieReview_Adapter;
 import com.example.moviebag.MovieData_Models.Movie_Reviews;
-import com.example.moviebag.R;
-import com.example.moviebag.Tools.Custom_Utilities;
 import com.example.moviebag.ViewModel.MovieReview_VM;
-import com.example.moviebag.api.API_Interface;
-import com.example.moviebag.api.RetrofitClientAPI;
 import com.example.moviebag.databinding.ActivityMovieReviewsBinding;
-import com.example.moviebag.databinding.ReviewMovieLayoutBinding;
-import com.squareup.picasso.Picasso;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class Movie_Reviews_Activity extends AppCompatActivity {
 

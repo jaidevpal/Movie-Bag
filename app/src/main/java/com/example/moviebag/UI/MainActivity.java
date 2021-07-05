@@ -1,59 +1,34 @@
 package com.example.moviebag.UI;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.moviebag.Adapters.MainActivityRV_Adapter;
 import com.example.moviebag.Adapters.MainActivityVP_Adapter;
 import com.example.moviebag.MovieData_Models.Movie_Now_Playing;
 import com.example.moviebag.MovieData_Models.Movie_Popular;
-import com.example.moviebag.R;
-import com.example.moviebag.Tools.Custom_Utilities;
 import com.example.moviebag.Tools.Custom_ViewOnItemClickListener;
 import com.example.moviebag.ViewModel.MovieNow_VM;
 import com.example.moviebag.ViewModel.MoviePop_VM;
-import com.example.moviebag.api.API_Interface;
-import com.example.moviebag.api.RetrofitClientAPI;
 import com.example.moviebag.databinding.ActivityMainBinding;
-import com.example.moviebag.databinding.HomeRecyclerviewlayoutPopularmoviesBinding;
-import com.example.moviebag.databinding.HomeViewpagerlayoutPopularmoviesBinding;
-import com.squareup.picasso.Picasso;
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements Custom_ViewOnItemClickListener {
 
     private ActivityMainBinding binding;
     private LinearLayoutManager layoutManagerRV;
-    private WormDotsIndicator dotsIndicator;
 
     private MoviePop_VM moviePop_vm;
     private MovieNow_VM movieNow_vm;
 
-
-    private API_Interface api_interface;
     private List<Movie_Popular.Result> movie_populars = new ArrayList<>();
 
     private MainActivityRV_Adapter adapter;
@@ -72,8 +47,6 @@ public class MainActivity extends AppCompatActivity implements Custom_ViewOnItem
         setContentView(binding.getRoot());
 
 //        This will turn onn the page loading animation(The Shimmer Effect)
-//        binding.shimmerFrameLayoutRV.setVisibility(View.VISIBLE);
-//        binding.shimmerFrameLayoutRV.startShimmer();
         binding.shimmerFrameLayoutVP.setVisibility(View.VISIBLE);
         binding.shimmerFrameLayoutVP.startShimmer();
 
